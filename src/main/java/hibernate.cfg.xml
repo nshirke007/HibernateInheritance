@@ -1,0 +1,52 @@
+<!-- <?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+      
+      <property name = "hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+      
+      Assume test is the database name
+      
+      <property name = "hibernate.connection.url">jdbc:mysql:3306//localhost/test</property>
+      
+      <property name = "hibernate.connection.username">root</property>
+      
+      <property name = "hibernate.connection.password">root</property>
+      List of XML mapping files
+      <mapping resource = "EmpInfo.hbm.xml"/>
+      		<property name="hbm2ddl.auto">update</property>
+      
+   </session-factory>
+</hibernate-configuration> -->
+<hibernate-configuration>
+       
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/test</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+
+    <!-- JDBC connection pool (use the built-in) -->
+
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+    <!-- Enable Hibernate's automatic session context management -->
+
+    <!-- Disable the second-level cache  -->
+
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">create-drop</property>
+
+    <mapping class="com.scp.HibernateDemo1.InhiretanceInhibernate.Vehicle"/>
+    <mapping class="com.scp.HibernateDemo1.InhiretanceInhibernate.TwoWheeler"/>
+    <mapping class="com.scp.HibernateDemo1.InhiretanceInhibernate.FourWheeler"/>
+  </session-factory>
+</hibernate-configuration>
